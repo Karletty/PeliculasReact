@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Outlet, Route } from "react-router-dom";
+import { Layout } from "./components";
 import { Dashboard, Login, Popular, Search, Signup, Upcoming } from "./pages";
 
 function App() {
       return (
             <BrowserRouter>
                   <Routes>
-                        <Route path="/" element={<Outlet />}>
+                        <Route path="/" element={<Layout><Outlet /></Layout>}>
                               <Route index element={<Dashboard />} />
                               <Route path="login" element={<Login />} />
                               <Route path="signup" element={<Signup />} />
