@@ -4,3 +4,4 @@ export { Popular } from './Popular';
 export { Search } from './Search';
 export { Signup } from './Signup';
 export { Upcoming } from './Upcoming';
+export { MovieDetail } from './MovieDetail';
