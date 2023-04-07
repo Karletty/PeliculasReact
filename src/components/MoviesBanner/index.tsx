@@ -1,4 +1,5 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
+import {NavLink} from 'react-router-dom';
 import { Movie } from "../../types";
 import './styles.scss';
 import Carousel from 'react-bootstrap/Carousel';
@@ -25,7 +26,10 @@ const MoviesBanner: FC<Props> = ({ movies }) => {
                   {group.map((moviesArray, i) => (
                         <Carousel.Item ><ul className="slider-movies" id={`slider-${i}`}>
                               {moviesArray.map(movie => (
-                                    <li className="slide-item" style={{ backgroundImage: `url(${movie.poster_path})` }} id={`slide-${movie.id}`}></li>
+
+                                    <NavLink className='nav-link' to={`movie/${movie.id}`}>
+                                          <li className="slide-item" style={{ backgroundImage: `url(${movie.poster_path})` }} id={`slide-${movie.id}`}></li>
+                                    </NavLink>
                               ))}
                         </ul></Carousel.Item>
                   ))}
