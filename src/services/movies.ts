@@ -11,7 +11,7 @@ const getMovies = async (endpoint: string) => {
                   backdrop_path: 'https://image.tmdb.org/t/p/original' + movie.backdrop_path
             })
       });
-      return modifiedMovies;
+      return modifiedMovies as Movie[];
 }
 
 const getPopular = async () => {
