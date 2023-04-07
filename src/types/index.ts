@@ -1,15 +1,14 @@
 export type User = {
-      id: string;
-      name: string;
-      email: string;
-      lastname: string;
-      pass: string;
-      birthday: Date;
+      id: string,
+      name: string,
+      lastname: string,
+      email: string,
+      pass: string,
+      birthdate: Date,
 }
 
-export type SignUpForm = Omit<User, 'id' | 'birthday'> & { birthday: string;}
-export type LoginUser = Omit<User, 'id' | 'lastname' | 'birthday'>;
-export type SignUpPayload = Omit<User, 'id'>;
+export type LoginUser = Omit<User, 'id' | 'lastName' | 'name' | 'birthdate'>;
+export type SignUpUser = Omit<User, 'id'>;
 
 export type Movie = {
       adult: boolean,

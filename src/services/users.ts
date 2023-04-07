@@ -1,8 +1,8 @@
 import { mapToArray } from "../helpers/mapToArray";
-import { SignUpPayload, User } from "../types";
-import { apiFirebase } from "../utils/axios";
+import { SignUpUser, User } from "../types";
+import { apiFirebase } from "../utils/axios"
 
-const add = async (user: SignUpPayload) => {
+const add = async (user: SignUpUser) => {
       const response = await apiFirebase.post('/users.json', user);
       return response.data.name;
 }
@@ -17,8 +17,8 @@ const get = async (id: string) => {
       return { id, ...response.data };
 }
 
-const update = async ({ id, name, lastname, email, pass, birthday }: User) => {
-      const response = await apiFirebase.put(`/users/${id}.json`, { name, lastname, email, pass, birthday });
+const update = async ({ id, name, lastname, email, pass, birthdate }: User) => {
+      const response = await apiFirebase.put(`/users/${id}.json`, { name, lastname, email, pass, birthdate });
       return response.data.name;
 }
 
